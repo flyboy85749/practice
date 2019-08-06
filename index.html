@@ -1,33 +1,37 @@
 <!doctype html>
 <html>
+
 <head>
-    <title>Super Table Mad Lib</title>
+	<title>Super Table Mad Lib</title>
 	<link rel="stylesheet" type="text/css" href="reset.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="styles.css">
-	<script src="mad.js"></script>
+	
 </head>
 
 <body>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-				<a class="navbar-brand" href="index.html">Super Table</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				  <span class="navbar-toggler-icon"></span>
-				</button>
-			  
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				  <ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-					  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-					</li>
-					<li class="nav-item">
-					  <a class="nav-link" href="about.html">About</a>
-					</li>
-					<li class="nav-item dropdown">
-					  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="index.html">Mad Lib</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="about.html">About</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Current Members
-					  </a>
-					  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="#">Aaron</a>
 						<a class="dropdown-item" href="#">Bill</a>
 						<a class="dropdown-item" href="#">Chris</a>
@@ -35,34 +39,137 @@
 						<a class="dropdown-item" href="#">Matthew</a>
 						<div class="dropdown-divider"></div>
 						<a class="dropdown-item" href="#">Join Us</a>
-					  </div>
-					</li>
-					<li class="nav-item">
-					  <a class="nav-link" href="#">Join Us</a>
-					</li>
-				  </ul>
-				  <form class="form-inline my-2 my-lg-0">
-					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-				  </form>
-				</div>
-			  </nav>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Join Us</a>
+				</li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		</div>
+	</nav>
 	<div class="container">
 		<div class="row">
 			<h1>About Steve Jobs</h1>
 		</div>
 		<div class="row">
-			<div class="col-6">
-				<p>This is the story of Steve Jobs, mad lib style, by the 
+			<div class="col-12">
+				<p>This is the story of Steve Jobs, mad lib style, by the
 					super table group. Right now, it randomly assigns nouns, verbs,
-					adverbs, and adjectives, based on the array in mad.js. Soon, it will allow 
-					for a form to enter them. Stay tuned...
+					adverbs, and adjectives, based on the array in mad.js. Soon, it will allow
+					for a form to enter them. Words in <b>bold</b> are the ones that change when you refresh the page.
 				</p>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col">
-				<p id="story"></p>
+				<script type="text/javascript">
+					// output the story
+					var randomStory = storyOfSteveJobs();
+					console.log(randomStory);
+
+					function getRandomItem(items) {
+						const length = items.length;
+						const index = Math.floor(
+							Math.random() * length
+						);
+						return items[index];
+					}
+
+					function storyOfSteveJobs() {
+						return `Steven <b>${name()}</b> Jobs was a(n) <b>${country()}</b> business magnate and 
+    investor. He was the ${ noun()}, chief executive officer (CEO), and co-founder 
+    of Apple Inc., the chairman and majority shareholder of Pixar, a member of The 
+    Walt Disney Company's ${ noun()} of directors following its acquisition of Pixar, and 
+    the founder, chairman, and CEO of NeXT. Jobs is <b>${ adverb()}</b> recognized as a pioneer of 
+    the microcomputer revolution of the 1970s and 1980s, along with <b>${ company()}</b> co-founder 
+    Steve Wozniak.
+
+Jobs was born in San Francisco, <b>${country()}</b> and put up for adoption. He was raised in 
+the San Francisco Bay Area. He attended <b>${name()}</b> College in 1972 before dropping out that 
+same year, and traveled through <b>${country()}</b> in 1974 seeking enlightenment and studying Zen 
+Buddhism. His declassified FBI report states that he used marijuana and LSD while he 
+was in college, and once told a reporter that taking LSD was "one of the two or three 
+most important things" he had done in his life.
+
+Jobs and <b>${name()}</b> co-founded Apple in 1976 to sell Wozniak's Apple I personal computer. 
+Together the duo gained fame and wealth a year later with the Apple II, one of the 
+first highly successful mass-produced personal computers. Jobs saw the commercial 
+potential of the Xerox Alto in 1979, which was mouse-driven and had a graphical user 
+interface (GUI). This led to development of the unsuccessful Apple <b>${name()}</b> in 1983, 
+followed by the breakthrough Macintosh in 1984, the first mass-produced computer with
+ a GUI. The Macintosh introduced the desktop publishing industry in 1985 with the 
+ addition of the Apple LaserWriter, the first laser printer to feature vector graphics. 
+ Jobs was forced out of Apple in 1985 after a long power struggle with the company's 
+ board and its then-CEO <b>${name()}</b> Sculley. That same year, Jobs took a few of Apple's 
+ members with him to found NeXT, a computer platform development company that 
+ specialized in computers for higher-education and business markets. In addition,
+  he helped to develop the visual effects industry when he funded the computer 
+  graphics division of George Lucas's Lucasfilm in 1986. The new company was Pixar, 
+  which produced the first 3D computer animated film Toy Story (1995).`;
+					}
+					function verb() {
+						const words = ['ran', 'walked', 'stopped', 'crawled'];
+						return getRandomItem(words);
+					}
+
+					function city() {
+						const cities = ['New York', 'Phoenix', 'Tucson', 'Springfield', 'Tuscaloosa', 'Frankfort', 'Toledo',
+							'San Francisco'];
+						return getRandomItem(cities);
+					}
+
+					function state() {
+						const states = ['alabama', 'alaska', 'virginia', 'New York'];
+						return getRandomItem(states);
+					}
+
+					function country() {
+						const countries = ['Germany', 'Poland', 'Austria', 'New Zealand', 'Russia'];
+						return getRandomItem(countries);
+					}
+
+					function noun() {
+						const nouns = ['horse', 'table', 'tree', 'car', 'Bob'];
+						return getRandomItem(nouns);
+					}
+
+					function adverb() {
+						const adverbs = ['unabashedly', 'poetically', 'admirably', 'beautifully', 'candidly', 'justly'];
+						return getRandomItem(adverbs);
+					}
+
+					function name() {
+						const names = ['Paul', 'Anthony', 'George', 'Jane', 'Matilda', 'Esmeralda', 'Penelope', 'Samuel'];
+						return getRandomItem(names);
+					}
+
+					function company() {
+						const companies = ['Microsoft', 'Ford', 'Alcoa', 'Starbucks', 'Boston Market', 'Volkswagen',
+							'Nike', 'Apple'];
+						return getRandomItem(companies);
+					}
+
+					function adjective() {
+						const adjectives = ['alive',
+							'better',
+							'careful',
+							'clever',
+							'dead',
+							'easy',
+							'famous',
+							'gifted',
+							'helpful',
+							'important',
+							'inexpensive',
+							'mushy'];
+						return getRandomItem(adjectives);
+					}
+					document.write(randomStory);
+				</script>
 			</div>
 		</div>
 		<div class="row">
@@ -74,12 +181,16 @@
 			</div>
 		</div>
 	</div>
-	<script>
-			document.getElementById("story").innerHTML = randomStory();
-			</script>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
 </body>
 
 </html>

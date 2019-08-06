@@ -15,8 +15,8 @@ function storyOfSteveJobs() {
     investor. He was the ${ noun() }, chief executive officer (CEO), and co-founder 
     of Apple Inc., the chairman and majority shareholder of Pixar, a member of The 
     Walt Disney Company's board of directors following its acquisition of Pixar, and 
-    the founder, chairman, and CEO of NeXT. Jobs is widely recognized as a pioneer of 
-    the microcomputer revolution of the 1970s and 1980s, along with Apple co-founder 
+    the founder, chairman, and CEO of NeXT. Jobs is ${ adverb() } recognized as a pioneer of 
+    the microcomputer revolution of the 1970s and 1980s, along with ${ company() } co-founder 
     Steve Wozniak.
 
 Jobs was born in San Francisco, California and put up for adoption. He was raised in 
@@ -58,6 +58,11 @@ function state() {
     return getRandomItem(states);
 }
 
+function country() {
+    const countries = ['Germany', 'Poland', 'Austria', 'New Zealand', 'Russia'];
+    return getRandomItem(countries);
+}
+
 function noun() {
     const nouns = ['horse', 'table', 'tree', 'car', 'Bob'];
     return getRandomItem(nouns);
@@ -66,6 +71,17 @@ function noun() {
 function adverb() {
     const adverbs = ['unabashedly', 'poetically', 'admirably', 'beautifully', 'candidly', 'justly'];
     return getRandomItem(adverbs);
+}
+
+function name() {
+    const names = ['Paul', 'Anthony', 'George', 'Jane', 'Matilda', 'Esmeralda', 'Penelope', 'Samuel'];
+    return getRandomItem(names);
+}
+
+function company() {
+    const companies = ['Microsoft', 'Ford', 'Alcoa', 'Starbucks', 'Boston Market', 'Volkswagen',
+'Nike', 'Apple'];
+return getRandomItem(companies);
 }
 
 function adjective() {
