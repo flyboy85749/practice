@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="styles.css">
-	
+
 </head>
 
 <body>
@@ -60,6 +60,7 @@
 				<p>This is the story of Steve Jobs, mad lib style. Right now, it randomly assigns nouns, verbs,
 					adverbs, and adjectives, based on the array in mad.js. Soon, it will allow
 					for a form to enter them. Words in <b>bold</b> are the ones that change when you refresh the page.
+					Also note that the "created with" language in the footer will randomly change.
 				</p>
 			</div>
 		</div>
@@ -87,7 +88,7 @@
     the microcomputer revolution of the 1970s and 1980s, along with <b>${ company()}</b> co-founder 
     Steve Wozniak.
 
-Jobs was born in San Francisco, <b>${country()}</b> and put up for adoption. He was <b>${ verb()}</b> in 
+Jobs was born in San Francisco, <b>${country()}</b> and put up for adoption. He was <b>${verb()}</b> in 
 the <b>${city()}</b> Bay Area. He attended <b>${name()}</b> College in 1972 before dropping out that 
 same year, and traveled through <b>${country()}</b> in 1974 seeking enlightenment and studying Zen 
 Buddhism. His declassified FBI report states that he used marijuana and LSD while he 
@@ -152,6 +153,8 @@ followed by the breakthrough <b>${noun()}</b> in 1984, the first mass-produced c
 						return getRandomItem(companies);
 					}
 
+				
+
 					function adjective() {
 						const adjectives = ['alive',
 							'better',
@@ -171,16 +174,25 @@ followed by the breakthrough <b>${noun()}</b> in 1984, the first mass-produced c
 				</script>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col">
-			</div>
-		</div>
-	</div>
-	
+		
+	</div> <!-- end container div -->
+<footer>
+	<script type="text/javascript">
+	function getRandomItem(items) {
+						const length = items.length;
+						const index = Math.floor(
+							Math.random() * length
+						);
+						return items[index];
+					}
+		function language() {
+			const languages = ['Javascript', 'Ruby on Rails', 'PHP', 'C#', 'Java', 'Python', 
+		'Fortran', 'Haskell', 'Pascal', 'Perl'];
+		return getRandomItem(languages);
+		}
+	document.write(`<p>Copyright &copy; 2019 William H. Hall III. Created with <b>${ language()}</b></p>`);
+</script>
+</footer>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>
