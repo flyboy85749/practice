@@ -1,0 +1,24 @@
+8/20/19 Things to look up
+
+var fictionQueen = {
+        name: "Snow White",
+        dwarfCount: 7,
+        isSleeping: true,
+
+      }
+
+      // prints My name is + variable "name"
+      // console.log("My name is " + name);
+
+      // prints "I have 7 dwarves"
+      // console.log("I have " + dwarfCount + " dwarves");
+
+      // prints "Snow White's 7 dwarves are all sleeping"
+      // 
+      
+      // now, let's console log, using the object
+      console.log("My name is " + this.name);
+
+      // why is dwarfCount undefined?
+      console.log("My name is " + this.name + ", and I have " + this.dwarfCount + " dwarves.");
+      console.log(this.dwarfCount);
